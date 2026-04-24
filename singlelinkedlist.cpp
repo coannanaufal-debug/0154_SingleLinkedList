@@ -10,9 +10,9 @@ public:
 };
 
 class linkedList
- {
+{
     Node *START;
-}
+
 
 public:
     linkedList() 
@@ -101,3 +101,23 @@ public:
             cout << endl;
         }
     }
+};
+
+int main() {
+    linkedList mhs;
+    int nim;
+    char ch;
+    do
+    {
+        cout << "Menu: " << endl;
+        cout << "1. menambahkan data kedalam list" << endl;
+        cout << "2. menghapus data dari dalam list" << endl;
+        cout << "3. menampilkan semua data dari dalam list" << endl;
+        cout << "4. menampilkan semua data dari dalam list secara terbalik" << endl;
+        cout << "5. mencari data dalam list" << endl;
+        cout << "6. keluar" << endl;
+        cout << "Masukkan pilihan (1-6): ";
+        cin >> ch;
+
+        
+}
