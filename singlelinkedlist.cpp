@@ -66,8 +66,10 @@ public:
         return (*current != NULL && (*current)->noMhs == nim);
     }
     bool delNode(int nim) {
-        Node* previous;
-        Node* current;
+        Node* previous, *current;
+        if (!search(nim, &previous, &current)) {
+            return false;
+        }
 
 
     }
