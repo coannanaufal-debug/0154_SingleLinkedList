@@ -26,7 +26,7 @@ public:
         nodeBaru->noMhs = nim;
         
 
-        if (START == NULL|| nim <= Start ->noMhs) {
+        if (START == NULL|| nim <= START ->noMhs) {
             if (START != NULL && START->noMhs == nim)
              {
                 cout << "\nDuplikasi noMhs tidak diizinkan.\n" << endl;
@@ -35,8 +35,8 @@ public:
             }
           
     }
-        Node *previous = Start;
-        Node *current = Start;
+        Node *previous = START;
+        Node *current = START;
 
         while ((current != NULL) && (current->noMhs < nim ))
          { 
@@ -49,4 +49,19 @@ public:
         }
         nodeBaru->next = current;
         previous->next = nodeBaru;
-};
+    };
+    bool listEmpty()
+    {
+        return START == NULL;
+    }
+    bool search(int nim, Node** previous, Node** current) {
+        *previous = START;
+        *current = START;
+
+        while (*current != NULL && (*current)->noMhs < nim) {
+            *previous = *current;
+            *current = (*current)->next;
+        }
+
+        return (*current != NULL && (*current)->noMhs == nim);
+    }
