@@ -1,19 +1,22 @@
 #include <iostream>
 using namespace std;
 
-class Node {
+class Node 
+{
 public:
     int noMhs;
     Node* next;
 
-}
+};
 
-class linkedList {
+class linkedList
+ {
     Node *START;
 }
 
 public:
-    linkedList() {
+    linkedList() 
+    {
         START = NULL;
     }
 
@@ -80,4 +83,21 @@ public:
         
 
 
+    }
+    void traverse()
+    {
+        if (listEmpty())
+        {
+            cout << "\nList Kosong\n" << endl;
+        }
+        else 
+        {
+            cout << "\nData didalam list adalah: \n" << endl;
+            Node* currentNode = START;
+            while (currentNode != NULL) {
+                cout << currentNode->noMhs << endl;
+                currentNode = currentNode->next;
+            }
+            cout << endl;
+        }
     }
