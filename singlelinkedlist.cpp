@@ -22,15 +22,15 @@ public:
         cout << "\nMasukkan Nomor Mahasiswa: ";
         cin >> nim;
 
-        Node* newBaru = new Node();
-        newBaru->noMhs = nim;
+        Node* nodeBaru = new Node();
+        nodeBaru->noMhs = nim;
         
 
-        if (START == NULL|| <= Start ->noMhs) {
+        if (START == NULL|| nim <= Start ->noMhs) {
             if (START != NULL && START->noMhs == nim)
              {
                 cout << "\nDuplikasi noMhs tidak diizinkan.\n" << endl;
-                delete newBaru; // Menghapus node yang baru dibuat
+                delete nodeBaru; // Menghapus node yang baru dibuat
                 return;
             }
           
@@ -38,4 +38,15 @@ public:
         Node *previous = Start;
         Node *current = Start;
 
+        while ((current != NULL) && (current->noMhs < nim ))
+         { 
+            if (nim == current->noMhs) {
+                cout << "\nDuplikasi noMhs tidak diizinkan.\n" << endl;
+                return;
+            }
+            previous = current;
+            current = current->next;
+        }
+        nodeBaru->next = current;
+        previous->next = nodeBaru;
 };
