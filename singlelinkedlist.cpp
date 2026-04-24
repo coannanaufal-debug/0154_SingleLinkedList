@@ -69,7 +69,12 @@ public:
         Node* previous, *current;
         if (!search(nim, &previous, &current)) {
             return false;
-        }
+
+        if (current == START) 
+            START = START->next;
+        else 
+            previous->next = current->next;
+        
 
 
     }
