@@ -57,3 +57,17 @@ public:
     bool search(int nim, Node** previous, Node** current) {
         *previous = START;
         *current = START;
+
+        while (*current != NULL && (*current)->noMhs < nim) {
+            *previous = *current;
+            *current = (*current)->next;
+        }
+
+        return (*current != NULL && (*current)->noMhs == nim);
+    }
+    bool delNode(int nim) {
+        Node* previous;
+        Node* current;
+
+
+    }
